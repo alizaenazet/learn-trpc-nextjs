@@ -2,8 +2,6 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-import Provider from "@/app/_trpc/Provider"; // import tRPC client Provider
-
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -18,12 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* wrap children inside Provider component */}
-        <Provider> 
-        {children}
-        </Provider>
-        </body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
